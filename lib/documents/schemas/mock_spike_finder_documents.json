@@ -1,0 +1,46 @@
+{
+  "pre-production": true,
+  "content_id": "66e7df00-5d57-43b5-8fc4-b233db73d787",
+  "base_path": "/mock-spike-finder",
+  "format_name": "Mock spike finder",
+  "name": "Mock spike finder",
+  "description": "Mock spike finder description",
+  "summary": "Mock spike finder summary",
+  "filter": {
+    "format": "mock_spike_finder_document"
+  },
+  "show_summaries": true,
+  "organisations": ["af07d5a5-df63-4ddc-9383-6a666845ebe9"],
+  "related": [
+    "af07d5a5-df63-4ddc-9383-6a666845ebe9"
+  ],
+  "document_noun": "mock document",
+  "facets": [
+    {
+      "key": "mock_spike_finder_document_facet_one",
+      "name": "Mock spike finder document facet one",
+      "short_name": "F1",
+      "type": "text",
+      "preposition": "helps with",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [
+        {"label": "Facet one value one", "value": "facet_one_value_one"},
+        {"label": "Facet one value two", "value": "facet_one_value_two"}
+      ]
+    },
+    {
+      "key": "mock_spike_finder_document_facet_two",
+      "name": "Mock spike finder document facet two",
+      "short_name": "F2",
+      "type": "text",
+      "preposition": "helps with",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [
+        {"label": "Facet two value one", "value": "facet_two_value_one"},
+        {"label": "Facet two value two", "value": "facet_two_value_two"}
+      ]
+    }
+  ]
+}

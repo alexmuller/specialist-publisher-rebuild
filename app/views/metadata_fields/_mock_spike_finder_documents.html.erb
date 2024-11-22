@@ -1,0 +1,28 @@
+<%= render layout: "shared/form_group", locals: { f: f, field: :mock_spike_finder_document_facet_one, label: "Facet 1" } do %>
+  <%= f.select :mock_spike_finder_document_facet_one,
+      facet_options(f, :mock_spike_finder_document_facet_one),
+      {},
+      {
+        class: 'select2 form-control',
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select Facet One'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :mock_spike_finder_document_facet_two, label: "Facet 2" } do %>
+  <%= f.select :mock_spike_finder_document_facet_two,
+               facet_options(f, :mock_spike_finder_document_facet_two),
+               {},
+               {
+                 class: 'select2 form-control',
+                 data:
+                   {
+                     placeholder: 'Select Facet Two'
+                   }
+               }
+  %>
+<% end %>

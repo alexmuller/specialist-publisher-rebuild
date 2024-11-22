@@ -261,6 +261,19 @@ FactoryBot.define do
     end
   end
 
+  factory :mock_spike_finder_document, parent: :document do
+    base_path { "/mock-spike-finder/example-document" }
+    document_type { "mock_spike_finder_document" }
+    transient do
+      default_metadata do
+        {
+          "mock_spike_finder_document_facet_one" => %w[facet_one_value_one],
+          "mock_spike_finder_document_facet_two" => "facet_two_value_one",
+        }
+      end
+    end
+  end
+
   factory :marine_equipment_approved_recommendation, parent: :document do
     base_path { "/marine-equipment-approved-recommendations/example-document" }
     document_type { "marine_equipment_approved_recommendation" }
