@@ -1,0 +1,1014 @@
+{
+  "target_stack": "draft",
+  "content_id": "5d6f9583-991f-413d-ae83-be7274e5eae4",
+  "base_path": "/trademark-decisions",
+  "format_name": "Find Intellectual Property related decisions",
+  "name": "Find Intellectual Property related decisions",
+  "description": "Find Intellectual Property (Trade Mark,) related decisions for the U.K.",
+  "summary": "<p>Find Intellectual Property (Trade Mark,) related decisions for the U.K.</p>",
+  "filter": {
+    "format": "intellectual_property_trademark_decision"
+  },
+  "show_summaries": true,
+  "organisations": [
+    "516357f6-92f3-4292-8449-b958e1c63c5f"
+  ],
+  "related": [
+    "425f29d1-47e5-4831-a8a7-93068d0effbc",
+    "9f37f0c4-5f25-4961-b24b-486b52756431",
+    "5f5961ca-7631-11e4-a3cb-005056011aef"
+  ],
+  "document_noun": "decision",
+  "document_title": "Intellectual Property (Trade Mark) Decisions",
+  "default_order": "title",
+  "facets": [
+    {
+      "key": "british_library_number",
+      "name": "British Library Number",
+      "short_name": "BL Number",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true
+    },
+    {
+      "key": "type_of_hearing",
+      "name": "Type of Hearing",
+      "short_name": "Type of Hearing",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [
+        {
+          "label": "Ex Parte",
+          "value": "ex-parte"
+        },
+        {
+          "label": "Inter Partes",
+          "value": "inter-partes"
+        },
+        {
+          "label": "Apponinted Person",
+          "value": "appointed-person"
+        },
+        {
+          "label": "Registrar - Ex Parte Hearings",
+          "value": "registrar-ex-parte-hearings"
+        },
+        {
+          "label": "Registrar - Inter Partes Interlocutory Hearings",
+          "value": "registrar-inter-partes-hearings-interlocutory-hearings"
+        },
+        {
+          "label": "Registrar - Inter Partes Main Hearings",
+          "value": "registrar-inter-partes-main-hearings"
+        },
+        {
+          "label": "Appointed Person - Ex Parte Hearings",
+          "value": "appointed-person-ex-parte-hearings"
+        },
+        {
+          "label": "Appointed Person - Inter Partes Interlocutory Hearings",
+          "value": "appointed-person-inter-partes-interlocutory-hearings"
+        },
+        {
+          "label": "Appointed Person - Inter Partes Main Hearings",
+          "value": "appointed-person-inter-partes-main-hearings"
+        }
+      ]
+    },
+    {
+      "key": "ipo_mark",
+      "name": "Mark",
+      "short_name": "Mark",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true
+    },
+    {
+      "key": "ipo_class",
+      "name": "Class",
+      "short_name": "Class",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [ 
+        {
+          "label": "1",
+          "value": "1"
+        },
+        {
+          "label": "2",
+          "value": "2"
+        },
+        {
+          "label": "3",
+          "value": "3"
+        },
+        {
+          "label": "4",
+          "value": "4"
+        },
+        {
+          "label": "5",
+          "value": "5"
+        },
+        {
+          "label": "6",
+          "value": "6"
+        },
+        {
+          "label": "7",
+          "value": "7"
+        },
+        {
+          "label": "8",
+          "value": "8"
+        },
+        {
+          "label": "9",
+          "value": "9"
+        },
+        {
+          "label": "10",
+          "value": "10"
+        },
+        {
+          "label": "11",
+          "value": "11"
+        },
+        {
+          "label": "12",
+          "value": "12"
+        },
+        {
+          "label": "13",
+          "value": "13"
+        },
+        {
+          "label": "14",
+          "value": "14"
+        },
+        {
+          "label": "15",
+          "value": "15"
+        },
+        {
+          "label": "16",
+          "value": "16"
+        },
+        {
+          "label": "17",
+          "value": "17"
+        },
+        {
+          "label": "18",
+          "value": "18"
+        },
+        {
+          "label": "19",
+          "value": "19"
+        },
+        {
+          "label": "20",
+          "value": "20"
+        },
+        {
+          "label": "21",
+          "value": "21"
+        },
+        {
+          "label": "22",
+          "value": "22"
+        },
+        {
+          "label": "23",
+          "value": "23"
+        },
+        {
+          "label": "24",
+          "value": "24"
+        },
+        {
+          "label": "25",
+          "value": "25"
+        },
+        {
+          "label": "26",
+          "value": "26"
+        },
+        {
+          "label": "27",
+          "value": "27"
+        },
+        {
+          "label": "28",
+          "value": "28"
+        },
+        {
+          "label": "29",
+          "value": "29"
+        },
+        {
+          "label": "30",
+          "value": "30"
+        },
+        {
+          "label": "31",
+          "value": "31"
+        },
+        {
+          "label": "32",
+          "value": "32"
+        },
+        {
+          "label": "33",
+          "value": "33"
+        },
+        {
+          "label": "34",
+          "value": "34"
+        },
+        {
+          "label": "35",
+          "value": "35"
+        },
+        {
+          "label": "36",
+          "value": "36"
+        },
+        {
+          "label": "37",
+          "value": "37"
+        },
+        {
+          "label": "38",
+          "value": "38"
+        },
+        {
+          "label": "39",
+          "value": "39"
+        },
+        {
+          "label": "40",
+          "value": "40"
+        },
+        {
+          "label": "41",
+          "value": "41"
+        },
+        {
+          "label": "42",
+          "value": "42"
+        },
+        {
+          "label": "43",
+          "value": "43"
+        },
+        {
+          "label": "44",
+          "value": "44"
+        },
+        {
+          "label": "45",
+          "value": "45"
+        }
+      ]
+    },
+    {
+      "key": "issued_between",
+      "name": "Issued Between",
+      "short_name": "Issued between",
+      "type": "date",
+      "display_as_result_metadata": true,
+      "filterable": true
+    },
+    {
+      "key": "and",
+      "name": "And",
+      "short_name": "And",
+      "type": "date",
+      "display_as_result_metadata": true,
+      "filterable": true
+    },
+    {
+      "key": "appointed_person_hearing_officer",
+      "name": "Appointed Person / Hearing Officer",
+      "short_name": "BL Number",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [ 
+        {
+          "label": "Mr N Abraham",
+          "value": "mr-n-abraham"
+        },
+        {
+          "label": "Ms L Adams",
+          "value": "ms-l-adams"
+        },
+        {
+          "label": "Dr Stylianos Alexandridis",
+          "value": "dr-stylianos-alexandridis"
+        },
+        {
+          "label": "Mr J Allen",
+          "value": "mr-j-allen"
+        },
+        {
+          "label": "Professor Ruth Annand",
+          "value": "professor-ruth-annand"
+        },
+        {
+          "label": "Mr D Anthony",
+          "value": "mr-d-anthony"
+        },
+        {
+          "label": "Mr Richard Arnold QC",
+          "value": "mr-richard-arnold-qc"
+        },
+        {
+          "label": "Mrs G Ashworth",
+          "value": "mrs-g-ashworth"
+        },
+        {
+          "label": "Mr G Attfield",
+          "value": "mr-g-attfield"
+        },
+        {
+          "label": "Mr K Bader",
+          "value": "mr-k-bader"
+        },
+        {
+          "label": "Ms M Bell",
+          "value": "ms-m-bell"
+        },
+        {
+          "label": "Mrs C Bennett",
+          "value": "mrs-c-bennett"
+        },
+        {
+          "label": "Ms C Boucher",
+          "value": "ms-c-boucher"
+        },
+        {
+          "label": "Mr C Bowen",
+          "value": "mr-c-bowen"
+        },
+        {
+          "label": "Mr M Boyle",
+          "value": "mr-m-boyle"
+        },
+        {
+          "label": "Ms Rosie Le Breton",
+          "value": "ms-rosie-le-breton"
+        },
+        {
+          "label": "Ms Rosie Le Breton",
+          "value": "ms-rosie-le-breton"
+        },
+        {
+          "label": "Mr M Bryant",
+          "value": "mr-m-bryant"
+        },
+        {
+          "label": "Mr Joseph Byrne",
+          "value": "mr-joseph-byrne"
+        },
+        {
+          "label": "Ms Anna Carboni",
+          "value": "ms-anna-carboni"
+        },
+        {
+          "label": "Charlotte Champion",
+          "value": "charlotte-champion"
+        },
+        {
+          "label": "Mrs A Cheeseman",
+          "value": "mrs-a-cheeseman"
+        },
+        {
+          "label": "Simon Clark",
+          "value": "simon-clark"
+        },
+        {
+          "label": "Mr M G Clarke QC",
+          "value": "mr-m-g-clarke-qc"
+        },
+        {
+          "label": "Mr D Collins",
+          "value": "mr-d-collins"
+        },
+        {
+          "label": "Mr R Colombo",
+          "value": "mr-r-colombo"
+        },
+        {
+          "label": "Mrs Sam Congreve",
+          "value": "mrs-sam-congreve"
+        },
+        {
+          "label": "Mr Arran Cooper",
+          "value": "mr-arran-cooper"
+        },
+        {
+          "label": "Mrs A Corbett",
+          "value": "mrs-a-corbett"
+        },
+        {
+          "label": "Dr L Cullen",
+          "value": "dr-l-cullen"
+        },
+        {
+          "label": "Mrs A Davies",
+          "value": "mrs-a-davies"
+        },
+        {
+          "label": "Mr Matthew Davies",
+          "value": "mr-matthew-davies"
+        },
+        {
+          "label": "Ms Helen Davies",
+          "value": "ms-helen-davies"
+        },
+        {
+          "label": "Mrs Helen Davies",
+          "value": "mrs-helen-davies"
+        },
+        {
+          "label": "Ms A Davies",
+          "value": "ms-a-davies"
+        },
+        {
+          "label": "Ms Leisa Davies",
+          "value": "ms-leisa-davies"
+        },
+        {
+          "label": "Miss V Douglas",
+          "value": "miss-v-douglas"
+        },
+        {
+          "label": "Mr Jonathan Edwards",
+          "value": "mr-jonathan-edwards"
+        },
+        {
+          "label": "Mr R Evans",
+          "value": "mr-r-evans"
+        },
+        {
+          "label": "Mr P Evans",
+          "value": "mr-p-evans"
+        },
+        {
+          "label": "Mr D Evans",
+          "value": "mr-d-evans"
+        },
+        {
+          "label": "Ms L Fayter",
+          "value": "ms-l-fayter"
+        },
+        {
+          "label": "Mr A Feldon",
+          "value": "mr-a-feldon"
+        },
+        {
+          "label": "Mrs D Ferrari",
+          "value": "mrs-d-ferrari"
+        },
+        {
+          "label": "Mrs E Fisher",
+          "value": "mrs-e-fisher"
+        },
+        {
+          "label": "Mr M Foley",
+          "value": "mr-m-foley"
+        },
+        {
+          "label": "Miss J Folwell",
+          "value": "miss-j-folwell"
+        },
+        {
+          "label": "Mr R Fowler",
+          "value": "mr-r-fowler"
+        },
+        {
+          "label": "Ms Sarah Grant",
+          "value": "ms-sarah-grant"
+        },
+        {
+          "label": "Miss A Hall",
+          "value": "miss-a-hall"
+        },
+        {
+          "label": "Ms J Hallas",
+          "value": "ms-j-hallas"
+        },
+        {
+          "label": "Mr C Hamilton",
+          "value": "mr-c-hamilton"
+        },
+        {
+          "label": "Mr J Hamilton-jones",
+          "value": "mr-j-hamilton-jones"
+        },
+        {
+          "label": "Ms R Harfield",
+          "value": "ms-r-harfield"
+        },
+        {
+          "label": "Mr N Harkness",
+          "value": "mr-n-harkness"
+        },
+        {
+          "label": "Mr Phillip Harris",
+          "value": "mr-phillip-harris"
+        },
+        {
+          "label": "Ms H Harrison",
+          "value": "ms-h-harrison"
+        },
+        {
+          "label": "Jonathan Hayward",
+          "value": "jonathan-hayward"
+        },
+        {
+          "label": "Mrs B Hedley",
+          "value": "mrs-b-hedley"
+        },
+        {
+          "label": "Mr G Hicks",
+          "value": "mr-g-hicks"
+        },
+        {
+          "label": "Mrs Suzanne Hitchings",
+          "value": "mrs-suzanne-hitchings"
+        },
+        {
+          "label": "Mr James Hopkins",
+          "value": "mr-james-hopkins"
+        },
+        {
+          "label": "Mr M Howe",
+          "value": "mr-m-howe"
+        },
+        {
+          "label": "Ms C Ireland",
+          "value": "ms-c-ireland"
+        },
+        {
+          "label": "Ms C Ireland",
+          "value": "ms-c-ireland"
+        },
+        {
+          "label": "Mr A James",
+          "value": "mr-a-james"
+        },
+        {
+          "label": "Nicola Janoo",
+          "value": "nicola-janoo"
+        },
+        {
+          "label": "Mr Martyn Jefferiss",
+          "value": "mr-martyn-jefferiss"
+        },
+        {
+          "label": "Mr M Jefferiss",
+          "value": "mr-martyn-jefferiss"
+        },
+        {
+          "label": "Mr Denzil Johnson",
+          "value": "mr-denzil-johnson"
+        },
+        {
+          "label": "Mr Phillip Johnson",
+          "value": "mr-phillip-johnson"
+        },
+        {
+          "label": "Ms Lucie Jones",
+          "value": "ms-lucie-jones"
+        },
+        {
+          "label": "Mr R A Jones",
+          "value": "mr-r-a-jones"
+        },
+        {
+          "label": "Mr Geoffrey Hobbs KC",
+          "value": "mr-geoffrey-hobbs-kc"
+        },
+        {
+          "label": "Mr Iain Purvis KC",
+          "value": "mr-iain-purvis-kc"
+        },
+        {
+          "label": "Mr Thomas Mitcheson KC",
+          "value": "mr-thomas-mitcheson-kc"
+        },
+        {
+          "label": "Mr Daniel Alexander KC",
+          "value": "mr-daniel-alenxander-kc"
+        },
+        {
+          "label": "Miss E. Himsworth KC",
+          "value": "miss-e-himsworth-kc"
+        },
+        {
+          "label": "Mr M King",
+          "value": "mr-m-king"
+        },
+        {
+          "label": "Mr David Kitchin QC",
+          "value": "mr-david-kitchin-qc"
+        },
+        {
+          "label": "Miss A Klass",
+          "value": "Miss A Klass"
+        },
+        {
+          "label": "Mr M Knight",
+          "value": "mr-m-knight"
+        },
+        {
+          "label": "Mr D Landau",
+          "value": "mr-d-landau"
+        },
+        {
+          "label": "Mr P Lawrence",
+          "value": "mr-p-lawrence"
+        },
+        {
+          "label": "Mr M Layton",
+          "value": "mr-m-layton"
+        },
+        {
+          "label": "Mr A Lingard",
+          "value": "mr-a-lingard"
+        },
+        {
+          "label": "Mrs S Long",
+          "value": "mrs-s-long"
+        },
+        {
+          "label": "Mr J MacGillivray",
+          "value": "mr-j-macgillivray"
+        },
+        {
+          "label": "Mrs Janeve Manca",
+          "value": "mrs-janeve-manca"
+        },
+        {
+          "label": "Miss J McNeill",
+          "value": "miss-j-mcneill"
+        },
+        {
+          "label": "Mr James Mellor QC",
+          "value": "mr-james-mellor-qc"
+        },
+        {
+          "label": "Miss A Michaels",
+          "value": "miss-a-michaels"
+        },
+        {
+          "label": "Mr G Miller",
+          "value": "mr-g-miller"
+        },
+        {
+          "label": "Mr D Morgan",
+          "value": "mr-d-morgan"
+        },
+        {
+          "label": "Mrs N Morgan",
+          "value": "mrs-n-morgan"
+        },
+        {
+          "label": "Mr O Morris",
+          "value": "mr-o-morris"
+        },
+        {
+          "label": "Ms Rhea Morris",
+          "value": "ms-rhea-morris"
+        },
+        {
+          "label": "Mr Jonathan Moss",
+          "value": "mr-jonathan-moss"
+        },
+        {
+          "label": "Miss L Nicholas",
+          "value": "miss-l-nicholas"
+        },
+        {
+          "label": "Melanie Oliver",
+          "value": "melanie-oliver"
+        },
+        {
+          "label": "Mr J Parker",
+          "value": "mr-j-parker"
+        },
+        {
+          "label": "Mr I Peggie",
+          "value": "mr-i-peggie"
+        },
+        {
+          "label": "Mrs T Perks",
+          "value": "mrs-t-perks"
+        },
+        {
+          "label": "Mrs J Pike",
+          "value": "mrs-j-pike"
+        },
+        {
+          "label": "Mr A Pike",
+          "value": "mr-a-pike"
+        },
+        {
+          "label": "Mrs A Pritchard",
+          "value": "mrs-a-pritchard"
+        },
+        {
+          "label": "Mr Geoffrey Pritchard",
+          "value": "mr-geoffrey-pritchard"
+        },
+        {
+          "label": "Mr S J Probert",
+          "value": "mr-s-j-probert"
+        },
+        {
+          "label": "Mr Iain Purvis",
+          "value": "mr-iain-purvis"
+        },
+        {
+          "label": "Ms J Ralph",
+          "value": "ms-j-ralph"
+        },
+        {
+          "label": "Mr C Redmore",
+          "value": "mr-c-redmore"
+        },
+        {
+          "label": "Mr A Rees",
+          "value": "mr-a-rees"
+        },
+        {
+          "label": "Ms Bridget Rees",
+          "value": "ms-bridget-rees"
+        },
+        {
+          "label": "Mr M Rees",
+          "value": "mr-m-rees"
+        },
+        {
+          "label": "Mrs E Rees",
+          "value": "mrs-e-rees"
+        },
+        {
+          "label": "Mr M Reynolds",
+          "value": "mr-m-reynolds"
+        },
+        {
+          "label": "Joanne Roberts",
+          "value": "joanne-roberts"
+        },
+        {
+          "label": "Mr Jacob Robinson",
+          "value": "mr-jacob-robinson"
+        },
+        {
+          "label": "Mr G Rose'Meyer",
+          "value": "mr-g-rose-meyer"
+        },
+        {
+          "label": "Mr Oliver Rose'Meyer",
+          "value": "mr-oliver-rose-meyer"
+        },
+        {
+          "label": "Mr Andrea Rossi",
+          "value": "mr-andrea-rossi"
+        },
+        {
+          "label": "Mr S P Rowan",
+          "value": "mr-s-p-rowan"
+        },
+        {
+          "label": "Mr G Salthouse",
+          "value": "mr-g-salthouse"
+        },
+        {
+          "label": "Mr R Sanders",
+          "value": "mr-r-sanders"
+        },
+        {
+          "label": "Mr L Scott",
+          "value": "mr-l-scott"
+        },
+        {
+          "label": "Lee Scott",
+          "value": "lee-scott"
+        },
+        {
+          "label": "Ms Amy Simms",
+          "value": "ms-amy-simms"
+        },
+        {
+          "label": "Ms A Skilton",
+          "value": "ms-a-skilton"
+        },
+        {
+          "label": "Mrs Linda Smith",
+          "value": "mrs-linda-smith"
+        },
+        {
+          "label": "Mr E S Smith",
+          "value": "mr-e-s-smith"
+        },
+        {
+          "label": "Mrs J Smith",
+          "value": "mrs-j-smith"
+        },
+        {
+          "label": "Ms Deborah Steele",
+          "value": "ms-deborah-steele"
+        },
+        {
+          "label": "Mrs L Stephens",
+          "value": "mrs-l-stephens"
+        },
+        {
+          "label": "Mrs K Stephens",
+          "value": "mrs-k-stephens"
+        },
+        {
+          "label": "Mr M Studley",
+          "value": "mr-m-studley"
+        },
+        {
+          "label": "Ms Rebecca Thomas",
+          "value": "ms-rebecca-thomas"
+        },
+        {
+          "label": "Mrs Karol Thomas",
+          "value": "mrs-karol-thomas"
+        },
+        {
+          "label": "Mr S Thorley QC",
+          "value": "mr-s-thorley-qc"
+        },
+        {
+          "label": "Dr W J Trott",
+          "value": "dr-w-j-trott"
+        },
+        {
+          "label": "Mr M Tuck",
+          "value": "mr-m-tuck"
+        },
+        {
+          "label": "Ms E Venables",
+          "value": "ms-e-venables"
+        },
+        {
+          "label": "Mr A Wall",
+          "value": "mr-a-wall"
+        },
+        {
+          "label": "Ms S Wallace",
+          "value": "ms-s-wallace"
+        },
+        {
+          "label": "Sarah Wallace",
+          "value": "sarah-wallace"
+        },
+        {
+          "label": "Ms Bethany Wheeler-Fowler",
+          "value": "ms-bethany-wheeler-fowler"
+        },
+        {
+          "label": "Mrs L White",
+          "value": "mrs-l-white"
+        },
+        {
+          "label": "Dr Brian Whitehead",
+          "value": "dr-brian-whitehead"
+        },
+        {
+          "label": "Mr John Williams",
+          "value": "mr-john-williams"
+        },
+        {
+          "label": "Ms Cartin Williams",
+          "value": "ms-cartin-williams"
+        },
+        {
+          "label": "Mr M Williams",
+          "value": "mr-m-williams"
+        },
+        {
+          "label": "Ms S Wilson",
+          "value": "ms-s-wilson"
+        },
+        {
+          "label": "xxxxxxxxxxxx",
+          "value": "xxxxxxxxxxxx"
+        }
+      ]
+    },
+    {
+      "key": "person_or_company_involved",
+      "name": "Person or Company Involved",
+      "short_name": "Person or Company Involved",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [ //not sure what goes here.
+      ]
+    },
+    {
+      "key": "grounds_section",
+      "name": "Grounds Section",
+      "short_name": "Grounds Section",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [ 
+        {
+          "label": "Section 3(1) Graphical Representation",
+          "value": "section-3-1-graphical-representation"
+        },
+        {
+          "label": "Section 3(1) Descriptiveness/Distinctiveness",
+          "value": "section-3-1-descriptiveness-distinctiveness"
+        },
+        {
+          "label": "Section 3(2) Shapes",
+          "value": "section-3-2-shapes"
+        },
+        {
+          "label": "Section 3(3) Immoral and Deceptive Marks",
+          "value": "section-3-3-immoral-and-deceptive-marks"
+        },
+        {
+          "label": "Section 3(4) and Section 3(5) Other Issues",
+          "value": "section-3-4-and-section-3-5-other-issues"
+        },
+        {
+          "label": "Section 3(6) Bad Faith",
+          "value": "section-3-6-bad-faith"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Earlier Trade Marks",
+          "value": "section-5-1-5-2-and-5-3-earlier-trade-marks"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Issues To Do With Goods/Services",
+          "value": "section-5-1-5-2-and-5-3-issues-to-do-with-goods-services"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Average Customer",
+          "value": "section-5-1-5-2-and-5-3-average-customer"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Distinctive Character of Earlier Trade Mark",
+          "value": "section-5-1-5-2-and-5-3-distinctive-character-of-earlier-trade-mark"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Likelihood of Confusion",
+          "value": "section-5-1-5-2-and-5-3-likeihood-of-confusion"
+        },
+        {
+          "label": "Section 5(1), 5(2) and 5(3) Dilution Cases",
+          "value": "section-5-1-5-2-and-5-3-dilution-cases"
+        },
+        {
+          "label": "Section 5(4) Earlier Rights",
+          "value": "section-5-4-earlier-rights"
+        },
+        {
+          "label": "Other Issues",
+          "value": "other-issues"
+        },
+        {
+          "label": "Revocation/Proof of Use",
+          "value": "revocation-proof-of-use"
+        },
+        {
+          "label": "Procedural Issues",
+          "value": "procedural-issues"
+        }
+      ]
+    },
+    {
+      "key": "grounds_sub_section",
+      "name": "Grounds Sub Section",
+      "short_name": "Gorunds Sub Section",
+      "type": "text",
+      "display_as_result_metadata": true,
+      "filterable": true,
+      "allowed_values": [ //not sure what goes here.
+      ]
+    },
+    {
+      "key": "browse_by_year",
+      "name": "Browse By Year",
+      "short_name": "Browse By Year",
+      "type": "date",
+      "display_as_result_metadata": true,
+      "filterable": true
+    }
+  ]
+}

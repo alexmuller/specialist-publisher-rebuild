@@ -1,0 +1,128 @@
+<%= render layout: "shared/form_group", locals: { f: f, field: :british_library_number, label: "British Library Number" } do %>
+  <%= f.select :british_library_number
+      facet_options(f, :british_library_number),
+      {},
+      {
+        class: 'select2 form-control', ## would this need to be different as it's not a typical facet which allows selections?
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select health and social care options' ## would this need to be different as it's not a typical facet which allows selections? 
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :type_of_hearing, label: "Type of Hearing" } do %>
+  <%= f.select :type_of_hearing,
+      facet_options(f, :type_of_hearing),
+      {},
+      {
+        class: 'select2 form-control',
+        multiple: false,
+        data:
+          {
+            placeholder: 'Select type of hearing options'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :mark, label: "Mark" } do %>
+  <%= f.select :mark,
+      facet_options(f, :mark),
+      {},
+      {
+        class: 'select2 form-control', ## would this need to be different as it's not a typical facet which allows selections?
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select legal and justice options' ## would this need to be different as it's not a typical facet which allows selections?
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :ipo_class, label: "Class" } do %>
+  <%= f.select :ipo_class,
+      facet_options(f, :ipo_class),
+      {},
+      {
+        class: 'select2 form-control',
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select class'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/date_fields", locals: { f: f, field: :issued_between, format: :intellectual_property_trademark_decision } do %>
+<% end %>
+
+<%= render layout: "shared/date_fields", locals: { f: f, field: :and, format: :intellectual_property_trademark_decision } do %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :appointed_person_hearing_officer, label: "Appointed Person/Hearing Officer" } do %>
+  <%= f.select :appointed_person_hearing_officer,
+      facet_options(f, :appointed_person_hearing_officer),
+      {},
+      {
+        class: 'select2 form-control', 
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select appointed person/hearing officer'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :person_or_company_involved, label: "Person or Company Involved" } do %>
+  <%= f.select :person_or_company_involved,
+      facet_options(f, :person_or_company_involved),
+      {},
+      {
+        class: 'select2 form-control', ## would this need to be different as it's not a typical facet which allows selections?
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select community and social options' ## would this need to be different as it's not a typical facet which allows selections?
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :grounds_section, label: "Grounds Section" } do %>
+  <%= f.select :grounds_section,
+      facet_options(f, :grounds_section),
+      {},
+      {
+        class: 'select2 form-control',
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select grounds section'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/form_group", locals: { f: f, field: :grounds_sub_section, label: "Grounds Sub Section" } do %>
+  <%= f.select :grounds_sub_section,
+      facet_options(f, :grounds_sub_section),
+      {},
+      {
+        class: 'select2 form-control',
+        multiple: true,
+        data:
+          {
+            placeholder: 'Select grounds sub section'
+          }
+      }
+  %>
+<% end %>
+
+<%= render layout: "shared/date_fields", locals: { f: f, field: :browse_by_year, format: :intellectual_property_trademark_decision } do %>
+<% end %>
