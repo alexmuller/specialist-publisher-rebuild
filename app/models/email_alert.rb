@@ -3,11 +3,24 @@ class EmailAlert
 
   attr_accessor :type, :list_title_prefix, :link, :content_id, :filter
 
+  # TODO: note to self below
+  # "Yes. Allow users to sign up to email alerts for everything published on the finder."
+  # => `signup_content_id` ONLY, and `subscription_list_title_prefix` (exposed as "Email subscription topic", but only where it's not a hash)
+  # "Yes. Allow users to sign up by specific filter criteria"
+  # => `signup_content_id`, `email_filter_by`, and (as above) `subscription_list_title_prefix`
+  # => (Currently has a checkbox for asking the developer to make a change, but I'd argue we can now expose this as the facet key, perhaps even linking to the edit facets form)
+  # "Yes. Allow users to sign up for updates using a signup link."
+  # => `signup_link` ONLY (only used by drug_safety_updates.json finder)
+  # "No"
+  # => No email-related properties whatsoever.
+
   def to_finder_schema_attributes
     {
       signup_content_id: content_id,
       subscription_list_title_prefix: list_title_prefix,
-      email_filter_by: filter,
+      email_filter_options: {
+        email_filter_by: filter,
+      },
       signup_link: link,
     }
   end
@@ -18,7 +31,7 @@ class EmailAlert
       email_alert.type = email_alert_type(schema)
       email_alert.content_id = schema.signup_content_id
       email_alert.list_title_prefix = schema.subscription_list_title_prefix
-      email_alert.filter = schema.email_filter_by
+      email_alert.filter = schema.email_filter_options&.fetch("email_filter_by", nil)
       email_alert.link = schema.signup_link
       email_alert
     end
@@ -33,7 +46,7 @@ class EmailAlert
   private
 
     def email_alert_type(schema)
-      return :filtered_content if schema.signup_content_id.present? && schema.email_filter_by.present?
+      return :filtered_content if schema.signup_content_id.present? && schema.email_filter_options.present?
       return :external if schema.signup_link.present?
       return :all_content if schema.signup_content_id.present?
 

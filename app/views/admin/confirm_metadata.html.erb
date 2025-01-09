@@ -33,6 +33,8 @@
       previous_schema: @current_format.finder_schema,
     } %>
 
+    <%= render(partial: "diff", locals: { old_schema: @current_format.finder_schema, new_schema: @proposed_schema }) %>
+
     <p class="govuk-body govuk-body govuk-!-margin-top-7">
       By submitting you are confirming that these changes are required to the specialist finder.
     </p>

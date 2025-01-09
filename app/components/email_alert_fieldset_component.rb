@@ -15,6 +15,11 @@ class EmailAlertFieldsetComponent < ViewComponent::Base
     [
       render_hidden_signup_content_id_input("filtered_content_signup_id"),
       render_email_topic_list_title_prefix("filtered_content_list_title_prefix"),
+      # Retains the existing `email_filter_by` value, UNLESS the checkbox below it is checked
+      # (in which case) the latter value takes priority
+      # TODO: currently everything else in 'email_filter_options' is dropped - we need to merge
+      # 'email_filter_by' into it, not replace the whole hash
+      render_hidden_email_filter_by_input("email_filter_by"),
       render("govuk_publishing_components/components/checkboxes", {
         name: "email_filter_by",
         heading: "Selected filter: #{@email_alert.filter&.humanize}",
@@ -63,6 +68,14 @@ private
       type: "hidden",
       name: input_name,
       value: @email_alert.content_id || SecureRandom.uuid,
+    })
+  end
+
+  def render_hidden_email_filter_by_input(input_name)
+    render("govuk_publishing_components/components/input", {
+      type: "hidden",
+      name: input_name,
+      value: @email_alert.filter || "",
     })
   end
 end

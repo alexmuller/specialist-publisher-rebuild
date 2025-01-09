@@ -15,13 +15,13 @@ RSpec.describe "EmailAlert" do
     it "builds an email alert for a finder schema with alerts configured for a filtered set of the content" do
       schema = FinderSchema.new
       schema.signup_content_id = "123"
-      schema.email_filter_by = "some_facet"
+      schema.email_filter_options = { "email_filter_by" => "some_facet" }
       schema.subscription_list_title_prefix = "Finder email subscription"
       email_alert = EmailAlert.from_finder_schema(schema)
       expect(email_alert.type).to eq(:filtered_content)
       expect(email_alert.content_id).to eq(schema.signup_content_id)
       expect(email_alert.list_title_prefix).to eq(schema.subscription_list_title_prefix)
-      expect(email_alert.filter).to eq(schema.email_filter_by)
+      expect(email_alert.filter).to eq("some_facet")
     end
 
     it "builds an email alert for a finder schema with alerts configured to use an external system" do
@@ -95,7 +95,9 @@ RSpec.describe "EmailAlert" do
       expect(email_alert.to_finder_schema_attributes).to eq({
         signup_content_id: "123",
         subscription_list_title_prefix: "Finder email subscription",
-        email_filter_by: "some_facet",
+        email_filter_options: {
+          email_filter_by: "some_facet",
+        },
         signup_link: "https://example.com",
       })
     end
