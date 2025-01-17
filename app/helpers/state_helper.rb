@@ -5,6 +5,12 @@ module StateHelper
     "label label-default"
   end
 
+  def design_system_classes_for_frontend(document)
+    return "govuk-tag govuk-tag--blue" if state_for_frontend(document) =~ /draft/
+
+    "govuk-tag govuk-tag--green"
+  end
+
   def state_for_frontend(document)
     compose_state(document.state_history.to_h)
   end

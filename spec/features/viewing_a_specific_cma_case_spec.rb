@@ -44,7 +44,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "displays the metadata" do
       visit "/cma-cases"
-      click_link "Example CMA Case"
+      find(".govuk-table").find("tr", text: "Example CMA Case").find("a", text: "View").click
 
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Example CMA Case")
@@ -90,7 +90,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
     scenario "the document has been bulk published" do
       visit "/cma-cases"
       expect(page).to have_content("Bulk published CMA Case")
-      click_link "Bulk published CMA Case"
+      find(".govuk-table").find("tr", text: "Bulk published CMA Case").find("a", text: "View").click
       expect(page).to have_content("Bulk published true")
     end
   end
@@ -128,14 +128,14 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document without attachments" do
       visit "/cma-cases"
-      click_link "CMA Case without attachments"
+      find(".govuk-table").find("tr", text: "CMA Case without attachments").find("a", text: "View").click
 
       expect(page).to have_content("This document doesn’t have any attachments")
     end
 
     scenario "Viewing a document with attachments" do
       visit "/cma-cases"
-      click_link "CMA Case with attachments"
+      find(".govuk-table").find("tr", text: "CMA Case with attachments").find("a", text: "View").click
 
       expect(page).to have_no_content("This document doesn’t have any attachments")
       expect(page).to have_content("2 attachments")
@@ -212,7 +212,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document with a draft state" do
       visit "/cma-cases"
-      click_link "Example Draft"
+      find(".govuk-table").find("tr", text: "Example Draft").find("a", text: "View").click
 
       expect(page).not_to have_content("View on website")
       expect(page).to have_content("Preview draft")
@@ -223,7 +223,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document with a published state" do
       visit "/cma-cases"
-      click_link "Example Published"
+      find(".govuk-table").find("tr", text: "Example Published").find("a", text: "View").click
 
       expect(page).to have_content("View on website")
       expect(page).not_to have_content("Preview draft")
@@ -241,7 +241,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document with an unpublished state" do
       visit "/cma-cases"
-      click_link "Example Unpublished"
+      find(".govuk-table").find("tr", text: "Example Unpublished").find("a", text: "View").click
 
       expect(page).not_to have_content("View on website")
       expect(page).not_to have_content("Preview draft")
@@ -252,7 +252,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document that has been published and has a new draft" do
       visit "/cma-cases"
-      click_link "Example Published with new draft"
+      find(".govuk-table").find("tr", text: "Example Published with new draft").find("a", text: "View").click
 
       expect(page).to have_content("View on website")
       expect(page).to have_content("Preview draft")
@@ -270,7 +270,7 @@ RSpec.feature "Viewing a specific case", type: :feature do
 
     scenario "Viewing a document that has been UN-published and has a new draft" do
       visit "/cma-cases"
-      click_link "Example Unpublished with new draft"
+      find(".govuk-table").find("tr", text: "Example Unpublished with new draft").find("a", text: "View").click
 
       expect(page).not_to have_content("View on website")
       expect(page).to have_content("Preview draft")

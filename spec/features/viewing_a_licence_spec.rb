@@ -21,7 +21,7 @@ RSpec.feature "Viewing a Licence", type: :feature do
 
   scenario "has organisation metadata" do
     visit "/licences"
-    click_link "Example document"
+    find(".govuk-table").find("tr", text: "Example document").find("a", text: "View").click
     expect(page.status_code).to eq(200)
     expect(page).to have_content("PPO Org")
     expect(page).to have_content("Other Org")

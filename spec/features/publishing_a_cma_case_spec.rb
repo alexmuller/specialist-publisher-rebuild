@@ -48,7 +48,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
       visit "/cma-cases"
       expect(page.status_code).to eq(200)
 
-      click_link "Example CMA Case"
+      find(".govuk-table").find("tr", text: "Example CMA Case").find("a", text: "View").click
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Example CMA Case")
 
@@ -73,7 +73,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
 
       expect(page.status_code).to eq(200)
 
-      click_link "Example CMA Case"
+      find(".govuk-table").find("tr", text: "Example CMA Case").find("a", text: "View").click
 
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Example CMA Case")
@@ -87,7 +87,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
       log_in_as_editor(:cma_writer)
 
       visit "/cma-cases"
-      click_link "Example CMA Case"
+      find(".govuk-table").find("tr", text: "Example CMA Case").find("a", text: "View").click
 
       expect(page).to have_no_selector(:button, "Publish")
       expect(page).to have_content("You don't have permission to publish this document.")
@@ -107,7 +107,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
       visit "/cma-cases"
       expect(page.status_code).to eq(200)
 
-      click_link "Live Item"
+      find(".govuk-table").find("tr", text: "Live Item").find("a", text: "View").click
 
       expect(page).to have_no_selector(:button, "Publish")
       expect(page).to have_content("There are no changes to publish.")
@@ -128,7 +128,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
 
       expect(page.status_code).to eq(200)
 
-      click_link "Major Update Case"
+      find(".govuk-table").find("tr", text: "Major Update Case").find("a", text: "View").click
 
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Major Update Case")
@@ -143,7 +143,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
 
       expect(page.status_code).to eq(200)
 
-      click_link "Major Update Case"
+      find(".govuk-table").find("tr", text: "Major Update Case").find("a", text: "View").click
       expect(page.status_code).to eq(200)
 
       click_link "Edit document"
@@ -182,7 +182,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
 
       expect(page.status_code).to eq(200)
 
-      click_link "Minor Update Case"
+      find(".govuk-table").find("tr", text: "Minor Update Case").find("a", text: "View").click
 
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Minor Update Case")
@@ -201,7 +201,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
 
       expect(page.status_code).to eq(200)
 
-      click_link "Minor Update Case"
+      find(".govuk-table").find("tr", text: "Minor Update Case").find("a", text: "View").click
 
       expect(page.status_code).to eq(200)
       expect(page).to have_content("Minor Update Case")
@@ -226,7 +226,7 @@ RSpec.feature "Publishing a CMA case", type: :feature do
       visit "/cma-cases"
       expect(page.status_code).to eq(200)
 
-      click_link "Unpublished Item"
+      find(".govuk-table").find("tr", text: "Unpublished Item").find("a", text: "View").click
 
       expect(page).to have_no_selector(:button, "Publish")
       expect(page).to have_content("The document is unpublished. You need to create a new draft before it can be published.")

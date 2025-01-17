@@ -80,7 +80,6 @@ RSpec.feature "Searching and filtering", type: :feature do
     scenario "viewing the last_edited_at field on the index page" do
       Timecop.freeze(test_date) do
         visit "/cma-cases"
-        expect(page).to have_css(".last-edited-at")
 
         within(".document-list li.document:nth-child(1)") do
           expect(page).to have_content("Updated 1 day ago")
@@ -99,8 +98,8 @@ RSpec.feature "Searching and filtering", type: :feature do
 
       expect(page).not_to have_select("Organisation")
 
-      fill_in "Search", with: "0"
-      click_button "Search"
+      fill_in "Title", with: "0"
+      click_button "Filter"
       expect(page).to have_content("Example CMA Case 0")
       expect(page).to have_selector("li.document", count: 1)
     end
@@ -109,9 +108,9 @@ RSpec.feature "Searching and filtering", type: :feature do
       stub_publishing_api_has_content([], hash_including(document_type: CmaCase.document_type, q: "abcdef"))
 
       visit "/cma-cases"
-      fill_in "Search", with: "abcdef"
-      click_button "Search"
-      expect(page).to have_content("Your search – abcdef – did not match any documents.")
+      fill_in "Title", with: "abcdef"
+      click_button "Filter"
+      expect(page).to have_content("Your search - abcdef - did not match any documents.")
     end
   end
 

@@ -1,27 +1,63 @@
-<%= content_for :page_title, current_format.title.pluralize %>
-
 <% content_for :breadcrumbs do %>
-  <li class='active'><%= current_format.title.pluralize %></li>
+  <%= render "govuk_publishing_components/components/breadcrumbs", {
+  collapse_on_mobile: true,
+    breadcrumbs: [
+      {
+        title: "All finders",
+        url: root_path
+      },
+      {
+        title: "#{current_format.title} finder",
+        url: "/#{current_format.admin_slug}"
+      }
+    ]
+  } %>
 <% end %>
+<% content_for :page_title, current_format.title.pluralize %>
+<% content_for :title, current_format.title.pluralize %>
 
-<h1 class="page-header"><%= current_format.title.pluralize %></h1>
-
-<div class="row">
-  <div class="col-md-12 text-right">
-    <p>
-      <% if current_format.target_stack == "draft" %>
-        <%= link_to "Preview draft (opens in new tab)", current_format.draft_url, target: "_blank" %>
-      <% elsif current_format.target_stack == "live" %>
-        <%= link_to "View on website (opens in new tab)", current_format.live_url, target: "_blank" %>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <%= render "govuk_publishing_components/components/inset_text", {
+      } do %>
+        <% if current_format.target_stack == "draft" %>
+          <%= link_to "Preview draft (opens in new tab)", current_format.draft_url, class: "govuk-link", target: "_blank", rel: "noopener" %>
+        <% elsif current_format.target_stack == "live" %>
+          <%= link_to "View on website (opens in new tab)", current_format.live_url, class: "govuk-link", target: "_blank", rel: "noopener" %>
+        <% end %>
       <% end %>
-    </p>
+
+      <%= render "govuk_publishing_components/components/secondary_navigation", {
+        aria_label: "Finder navigation",
+        items: [
+          {
+            label: "Finder documents",
+            href: documents_path(params[:document_type_slug]),
+            current: true,
+          },
+          {
+            label: "Finder setup",
+            href: "/admin/#{current_format.admin_slug}",
+          },
+        ]
+      } %>
   </div>
 </div>
 
-<div class="row">
-  <div class="sidebar col-md-3">
-    <%= link_to "Add another #{current_format.title}", new_document_path(current_format.admin_slug), class: 'action-link' %>
-    <%= form_tag(documents_path(current_format.admin_slug), method: :get, class: "add-vertical-margins well") do %>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third documents-index__search-box">
+    <%= form_tag(documents_path(current_format.admin_slug), method: :get) do %>
+      <%= render "govuk_publishing_components/components/heading", {
+        text: "Filter by"
+      } %>
+      <%= render "govuk_publishing_components/components/input", {
+        label: {
+          text: "Title",
+        },
+        name: "query",
+      } %>
+
       <% if current_format.has_organisations? %>
         <%= label_tag "organisation", "Organisation" %>
         <%= select_tag "organisation",
@@ -29,26 +65,75 @@
               class: "select2 form-control add-bottom-margin" %>
       <% end %>
 
-      <%= label_tag "query", "Search" %>
-      <%= text_field_tag("query", @query, class: "form-control add-bottom-margin") %>
-
-      <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+      <%= render "govuk_publishing_components/components/button", {
+          text: "Filter"
+        } %>
     <% end %>
+
     <% if current_format.exportable? %>
       <%= link_to "Export document list to CSV", export_documents_path(current_format.admin_slug, query: @query) %>
     <% end %>
   </div>
 
-  <div class="col-md-9">
-    <% if !@paged_documents.empty? %>
-      <ul class="document-list">
-        <%= render partial: 'document', collection: @paged_documents %>
-      </ul>
-      <%= paginate @paged_documents, :theme => 'twitter-bootstrap-3' %>
-    <% elsif @query %>
-      <p class="no-content no-content-bordered">Your search – <%= @query %> – did not match any documents.</p>
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body govuk-!-text-align-right">
+      <%= link_to "Add another #{current_format.title}", new_document_path(current_format.admin_slug), class: "" %>
+    </p>
+
+    <% if @paged_documents.empty? %>
+      <% if @query %>
+        <p class="govuk-body">Your search - <%= @query %> - did not match any documents.</p>
+      <% else %>
+        <p class="govuk-body">No <%= current_format.title.pluralize %> available.</p>
+      <% end %>
     <% else %>
-      <p class="no-content no-content-bordered">No <%= current_format.title.pluralize %> available.</p>
+      <%= render "govuk_publishing_components/components/table", {
+        first_cell_is_header: true,
+        head: [
+          {
+            text: "Title"
+          },
+          {
+            text: "Updated",
+          },
+          {
+            text: "Status",
+          },
+          {},
+        ],
+        rows: @paged_documents.map do |document|
+          [
+            {
+              text: document.title,
+            },
+            {
+              text: "Updated #{time_ago_in_words(document.last_edited_at)} ago",
+            },
+            {
+              text: raw("<strong class='#{design_system_classes_for_frontend(document)}'>#{state_for_frontend(document).upcase}</strong>"),
+            },
+            {
+              text: link_to(
+                "View",
+                document_path(current_format.admin_slug, content_id_and_locale: "#{document.content_id}:#{document.locale}"),
+                class: "govuk-link",
+              ),
+            },
+          ]
+        end
+      } %>
+
+      <%= render "govuk_publishing_components/components/previous_and_next_navigation", {
+        previous_page: ({
+          url: documents_path(current_format.admin_slug, query: @query, page: @paged_documents.current_page - 1),
+          title: "Previous page",
+          label: "1 of #{@paged_documents.total_pages}",
+        } if @paged_documents.current_page > 1),
+        next_page: ({
+          url: documents_path(current_format.admin_slug, query: @query, page: @paged_documents.current_page + 1),
+          title: "Next page",
+          label: "#{@paged_documents.current_page + 1} of #{@paged_documents.total_pages}",
+        } if @paged_documents.current_page < @paged_documents.total_pages)
+      }.compact %>
     <% end %>
-  </div>
 </div>

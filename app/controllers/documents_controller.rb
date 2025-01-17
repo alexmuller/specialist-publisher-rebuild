@@ -9,6 +9,8 @@ class DocumentsController < ApplicationController
   before_action :fetch_document, except: %i[index new create]
   before_action :check_authorisation, if: :document_type_slug
 
+  layout :override_layout
+
   def index
     page = filtered_page_param(params[:page])
     per_page = filtered_per_page_param(params[:per_page])
@@ -93,6 +95,15 @@ class DocumentsController < ApplicationController
   end
 
 private
+
+  def override_layout
+    # This method is only necessary until we've migrated _all_ actions to use the new layout
+    if action_name == "index"
+      "design_system"
+    else
+      "legacy_application"
+    end
+  end
 
   def check_authorisation
     if current_format
