@@ -24,7 +24,8 @@
     "competition/consumer-protection",
     "competition/markets",
     "competition/mergers",
-    "competition/regulatory-appeals-references"
+    "competition/regulatory-appeals-references",
+    "competition/regime"
   ],
   "subscription_list_title_prefix": "CMA cases",
   "email_filter_options": {
