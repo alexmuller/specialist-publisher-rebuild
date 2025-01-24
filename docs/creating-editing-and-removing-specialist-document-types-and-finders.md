@@ -124,7 +124,6 @@ To release the finder to the live stack:
    1. Open a new PR changing the `target_stack` of the finder from `draft` to `live` in Specialist Publisher json schema config
    2. [Deploy the finder](#7-deploy-a-finder) to the live stack
 
-
 ## 7. Deploy a finder
 1. Merge and deploy Publishing API, Specialist Publisher and Search API, if changed.
    - Ensure you deploy Publishing API first, to avoid schema validation errors.
