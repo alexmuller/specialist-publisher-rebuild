@@ -370,6 +370,15 @@ class Document
     []
   end
 
+  def self.apply_validations
+    finder_schema.facets.each do |facet|
+      key = facet["key"]
+      validations = facet.dig("specialist_publisher_properties", "validations") || {}
+
+      validates key.to_sym, presence: validations.fetch("required").deep_symbolize_keys if validations.key?("required")
+    end
+  end
+
 private
 
   def param_value(params, key)
