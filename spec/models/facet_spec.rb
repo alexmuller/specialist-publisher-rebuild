@@ -152,6 +152,20 @@ RSpec.describe "Facet" do
         expect(facet.type).to eq("date")
         expect(facet.specialist_publisher_properties).to eq(nil)
       end
+
+      it "adds presence validations to the specialist_publisher_properties if type is text" do
+        params = { "type" => "enum_text_single", "validations" => %w[required] }
+        facet = Facet.from_finder_admin_form_params(params)
+        expect(facet.type).to eq("text")
+        expect(facet.specialist_publisher_properties).to eq({ select: "one", validations: { required: {} } })
+      end
+
+      it "adds presence validations to the specialist_publisher_properties if type is date" do
+        params = { "type" => "date", "validations" => %w[required] }
+        facet = Facet.from_finder_admin_form_params(params)
+        expect(facet.type).to eq("date")
+        expect(facet.specialist_publisher_properties).to eq({ validations: { required: {} } })
+      end
     end
   end
 

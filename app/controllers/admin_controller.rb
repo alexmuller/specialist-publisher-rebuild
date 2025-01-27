@@ -100,19 +100,19 @@ private
   end
 
   def facets_params
-    allowed_facet_params = %i[
-      key
-      name
-      short_name
-      type
-      preposition
-      display_as_result_metadata
-      filterable
-      allowed_values
-      _destroy
-    ]
     params.permit(
-      facets: allowed_facet_params,
+      facets: [
+        :key,
+        :name,
+        :short_name,
+        :type,
+        :preposition,
+        :display_as_result_metadata,
+        :filterable,
+        :allowed_values,
+        :_destroy,
+        { validations: [] },
+      ],
     )
   end
 end

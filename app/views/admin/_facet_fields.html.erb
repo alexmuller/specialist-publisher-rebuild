@@ -49,6 +49,21 @@
     ]
 } %>
 
+<%= render "govuk_publishing_components/components/checkboxes", {
+  id: "facets-#{index}-validations",
+  name: "facets[#{index}][validations][]",
+  heading: "Validation",
+  heading_size: "s",
+  hint_text: "Select the type of validation that should be applied to the filter.",
+  items: [
+    {
+      label: "Required",
+      value: "required",
+      checked: facet.dig("specialist_publisher_properties", "validations")&.key?("required"),
+    }
+  ]
+} %>
+
 <%= render "govuk_publishing_components/components/textarea", {
   label: {
     text: "Filter options ('Multiple select' or 'One option' only)",

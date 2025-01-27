@@ -49,6 +49,10 @@ RSpec.feature "Editing the CMA case finder filters and options", type: :feature 
     choose "#{inserted_facet}[display_as_result_metadata]", option: "false", visible: false
     fill_in "#{inserted_facet}[preposition]", with: "of type NEW"
 
+    within find("fieldset", text: "Filter 2") do
+      check "Required", visible: false
+    end
+
     click_button "Submit changes"
 
     expect(page).to have_selector(".govuk-summary-list__row", text: "Case type Updated (click on 'View diff' for details)")
