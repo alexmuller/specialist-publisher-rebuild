@@ -149,7 +149,10 @@
       "preposition": "Organisation",
       "short_name": "Organisation",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -191,7 +194,10 @@
       "preposition": "Organisation type",
       "short_name": "Organisation type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -346,7 +352,10 @@
       "preposition": "Phase",
       "short_name": "Phase",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -427,6 +436,11 @@
       "name": "Date published",
       "preposition": "Date published",
       "short_name": "Date published",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {
@@ -436,6 +450,11 @@
       "name": "ATRS version",
       "preposition": "ATRS version",
       "short_name": "ATRS version",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "text"
     },
     {

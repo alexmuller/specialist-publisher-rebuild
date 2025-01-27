@@ -900,7 +900,10 @@
       "preposition": "of type",
       "short_name": "Document Type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -962,7 +965,10 @@
       "preposition": "about",
       "short_name": "Theme",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -972,6 +978,11 @@
       "key": "first_published_at",
       "name": "First published",
       "short_name": "First published",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {

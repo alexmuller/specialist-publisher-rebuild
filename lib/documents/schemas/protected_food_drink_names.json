@@ -10,6 +10,11 @@
       "filterable": false,
       "key": "registered_name",
       "name": "Registered name",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "text"
     },
     {
@@ -49,7 +54,10 @@
       "name": "Register",
       "preposition": "register type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -82,7 +90,10 @@
       "name": "Status",
       "preposition": "status",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -460,7 +471,10 @@
       "preposition": "class or category",
       "short_name": "Class or category",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -501,7 +515,10 @@
       "name": "Protection type",
       "preposition": "protection type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -802,7 +819,10 @@
       "name": "Country of origin",
       "preposition": "country of origin",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },

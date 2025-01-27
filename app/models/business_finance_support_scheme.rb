@@ -1,10 +1,6 @@
 class BusinessFinanceSupportScheme < Document
-  validates :business_sizes, presence: true
-  validates :business_stages, presence: true
+  apply_validations
   validates :continuation_link, presence: true
-  validates :industries, presence: true
-  validates :regions, presence: true
-  validates :types_of_support, presence: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     business_sizes

@@ -31,7 +31,10 @@
       "name": "Location",
       "preposition": "In",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -239,7 +242,10 @@
       "preposition": "For",
       "show_option_select_filter": true,
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },

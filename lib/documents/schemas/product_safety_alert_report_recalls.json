@@ -31,7 +31,10 @@
       "preposition": "of type",
       "short_name": "Alert type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -65,7 +68,10 @@
       "preposition": "that are",
       "short_name": "Risk level",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -202,7 +208,10 @@
       "name": "Product category",
       "preposition": "of type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -264,7 +273,10 @@
       "preposition": "of type",
       "short_name": "Measure type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },

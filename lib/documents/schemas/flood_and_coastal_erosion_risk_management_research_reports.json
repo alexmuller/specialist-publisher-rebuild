@@ -42,7 +42,10 @@
       "name": "Category",
       "preposition": "with category",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -283,7 +286,10 @@
       "name": "Topics",
       "preposition": "with topics",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -304,7 +310,10 @@
       "name": "Project status",
       "preposition": "with project status",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -313,6 +322,11 @@
       "filterable": false,
       "key": "project_code",
       "name": "Project code",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "text"
     },
     {

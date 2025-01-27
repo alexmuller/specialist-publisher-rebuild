@@ -37,7 +37,7 @@ class Facet
       facet.display_as_result_metadata = params["display_as_result_metadata"]
       facet.filterable = params["filterable"]
       facet.allowed_values = facet_allowed_values(params["allowed_values"], params["type"])
-      facet.specialist_publisher_properties = facet_specialist_publisher_properties(params["type"])
+      facet.specialist_publisher_properties = facet_specialist_publisher_properties(params["type"], params["validations"])
       facet
     end
 
@@ -67,13 +67,32 @@ class Facet
       end
     end
 
-    def facet_specialist_publisher_properties(type)
+    def facet_specialist_publisher_properties(type, validations)
+      properties = facet_specialist_publisher_properties_select(type).merge(facet_specialist_publisher_properties_validations(validations))
+
+      properties.presence
+    end
+
+    def facet_specialist_publisher_properties_select(type)
       case type
       when "enum_text_multiple"
         { select: "multiple" }
       when "enum_text_single"
         { select: "one" }
+      else
+        {}
       end
+    end
+
+    def facet_specialist_publisher_properties_validations(validations)
+      return {} unless validations
+
+      rules = {}
+      validations.each do |key|
+        rules[key.to_sym] = {}
+      end
+
+      { validations: rules }
     end
 
     def facet_types_that_allow_enum_values

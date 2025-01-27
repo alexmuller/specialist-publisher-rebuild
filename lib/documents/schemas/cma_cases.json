@@ -74,7 +74,10 @@
       "name": "Case type",
       "preposition": "of type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -95,7 +98,10 @@
       "name": "Case state",
       "preposition": "which are",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -232,7 +238,10 @@
       "name": "Market sector",
       "preposition": "about",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },

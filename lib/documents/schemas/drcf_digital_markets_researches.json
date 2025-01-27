@@ -23,7 +23,10 @@
       "preposition": "",
       "short_name": "Category",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -81,7 +84,10 @@
       "preposition": "",
       "short_name": "Publisher",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -119,7 +125,10 @@
       "preposition": "",
       "short_name": "Research area",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -277,7 +286,10 @@
       "preposition": "",
       "short_name": "Research topic",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -288,6 +300,11 @@
       "name": "Research publish date",
       "preposition": "research published",
       "short_name": "Research published",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

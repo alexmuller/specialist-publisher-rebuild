@@ -46,7 +46,10 @@
       "name": "Marine notice type",
       "preposition": "of type",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -95,7 +98,10 @@
       "name": "Vessel type",
       "preposition": "with vessel of type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -144,7 +150,10 @@
       "name": "Topic",
       "preposition": "with topic of",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -155,6 +164,11 @@
       "name": "Issued",
       "preposition": "issued",
       "short_name": "Issued",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

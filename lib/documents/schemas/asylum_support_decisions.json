@@ -29,7 +29,10 @@
       "name": "Category",
       "preposition": "categorised as",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -118,7 +121,10 @@
       "name": "Sub-category",
       "preposition": "sub-categorised as",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -239,7 +245,10 @@
       "name": "Judges",
       "preposition": "by judge",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -259,7 +268,10 @@
       "key": "tribunal_decision_landmark",
       "name": "Landmark",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -268,6 +280,11 @@
       "filterable": false,
       "key": "tribunal_decision_reference_number",
       "name": "Reference number",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "text"
     },
     {
@@ -277,6 +294,11 @@
       "name": "Decision date",
       "preposition": "decided",
       "short_name": "Decided",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {

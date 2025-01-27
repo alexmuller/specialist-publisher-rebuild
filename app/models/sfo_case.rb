@@ -1,6 +1,6 @@
 class SfoCase < Document
-  validates :sfo_case_state, presence: true
-  validates :sfo_case_date_announced, presence: true, date: true
+  apply_validations
+  validates :sfo_case_date_announced, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     sfo_case_state

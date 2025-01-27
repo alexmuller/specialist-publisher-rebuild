@@ -40,7 +40,10 @@
       "name": "Message type",
       "preposition": "for",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -156,6 +159,11 @@
       "name": "Issued",
       "preposition": "issued",
       "short_name": "Issued",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

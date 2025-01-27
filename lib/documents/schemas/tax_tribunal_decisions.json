@@ -47,7 +47,10 @@
       "preposition": "categorised as",
       "short_name": "category",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },

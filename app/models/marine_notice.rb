@@ -1,8 +1,6 @@
 class MarineNotice < Document
-  validates :issued_date, presence: true, date: true
-  validates :marine_notice_type, presence: true
-  validates :marine_notice_vessel_type, presence: true
-  validates :marine_notice_topic, presence: true
+  apply_validations
+  validates :issued_date, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     marine_notice_type

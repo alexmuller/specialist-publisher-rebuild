@@ -59,7 +59,10 @@
       "preposition": "in region",
       "short_name": "region",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -373,7 +376,10 @@
       "name": "Appliance manufacturer",
       "preposition": "manufactured by",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     }

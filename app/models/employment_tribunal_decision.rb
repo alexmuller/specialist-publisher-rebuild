@@ -1,7 +1,6 @@
 class EmploymentTribunalDecision < Document
-  validates :tribunal_decision_categories, presence: true
-  validates :tribunal_decision_country, presence: true
-  validates :tribunal_decision_decision_date, presence: true, date: true
+  apply_validations
+  validates :tribunal_decision_decision_date, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     hidden_indexable_content

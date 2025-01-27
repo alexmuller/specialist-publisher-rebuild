@@ -269,7 +269,10 @@
       "name": "Categories",
       "preposition": "categorised as",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -2695,7 +2698,10 @@
       "name": "Judges",
       "preposition": "by judge",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -2705,6 +2711,11 @@
       "key": "tribunal_decision_decision_date",
       "name": "Decision date",
       "short_name": "Decided",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {
