@@ -29,7 +29,7 @@ gem "pundit"
 # See https://github.com/puma/puma/pull/3532
 # `require: false` is needed because you can't actually `require "rackup"`
 # due to a different bug: https://github.com/rack/rackup/commit/d03e1789
-gem "rackup", "1.0.0", require: false
+gem "rackup", "2.2.1", require: false
 gem "select2-rails", "< 4" # v4 changes the generated HTML and breaks the e2e tests
 gem "sentry-sidekiq"
 gem "stringex"
