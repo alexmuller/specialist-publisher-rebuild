@@ -1,11 +1,5 @@
 class InternationalDevelopmentFund < Document
-  FORMAT_SPECIFIC_FIELDS = %i[
-    fund_state
-    location
-    development_sector
-    eligible_entities
-    value_of_funding
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

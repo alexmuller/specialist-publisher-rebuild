@@ -2,14 +2,7 @@ class ResearchForDevelopmentOutput < Document
   apply_validations
   validates :first_published_at, date: true
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    research_document_type
-    country
-    first_published_at
-    authors
-    theme
-    review_status
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

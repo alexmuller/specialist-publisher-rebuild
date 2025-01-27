@@ -4,14 +4,7 @@ class FloodAndCoastalErosionRiskManagementResearchReport < Document
   validates :date_of_start, date: true
   validates :primary_publishing_organisation, presence: true
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    flood_and_coastal_erosion_category
-    date_of_completion
-    date_of_start
-    project_code
-    project_status
-    topics
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS, :organisations, :primary_publishing_organisation)
 

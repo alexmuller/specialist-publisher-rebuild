@@ -1,11 +1,5 @@
 class LicenceTransaction < Document
-  FORMAT_SPECIFIC_FIELDS = %i[
-    licence_transaction_continuation_link
-    licence_transaction_industry
-    licence_transaction_licence_identifier
-    licence_transaction_location
-    licence_transaction_will_continue_on
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   CUSTOM_ERROR_MESSAGE_FIELDS = FORMAT_SPECIFIC_FIELDS + %i[
     primary_publishing_organisation

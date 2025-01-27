@@ -1,11 +1,7 @@
 class FarmingGrant < Document
   apply_validations
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    areas_of_interest
-    land_types
-    payment_types
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

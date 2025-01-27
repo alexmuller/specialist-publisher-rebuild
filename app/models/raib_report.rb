@@ -2,11 +2,7 @@ class RaibReport < Document
   apply_validations
   validates :date_of_occurrence, date: true
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    date_of_occurrence
-    report_type
-    railway_type
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

@@ -1,9 +1,5 @@
 class ServiceStandardReport < Document
-  FORMAT_SPECIFIC_FIELDS = %i[
-    assessment_date
-    result
-    stage
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

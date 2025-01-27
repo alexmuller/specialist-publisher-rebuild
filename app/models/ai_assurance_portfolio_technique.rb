@@ -1,12 +1,5 @@
 class AiAssurancePortfolioTechnique < Document
-  FORMAT_SPECIFIC_FIELDS = %i[
-    use_case
-    sector
-    principle
-    key_function
-    ai_assurance_technique
-    assurance_technique_approach
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 
