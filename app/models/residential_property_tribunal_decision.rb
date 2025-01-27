@@ -1,7 +1,7 @@
 class ResidentialPropertyTribunalDecision < Document
-  validates :tribunal_decision_category, presence: true
-  validates :tribunal_decision_sub_category, presence: true, residential_property_tribunal_decision_sub_category: true
-  validates :tribunal_decision_decision_date, presence: true, date: true
+  apply_validations
+  validates :tribunal_decision_sub_category, residential_property_tribunal_decision_sub_category: true
+  validates :tribunal_decision_decision_date, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     hidden_indexable_content

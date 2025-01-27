@@ -86,6 +86,11 @@
       "name": "Date of occurrence",
       "preposition": "occurred",
       "short_name": "Occurred",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

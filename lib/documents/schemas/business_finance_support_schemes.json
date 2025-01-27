@@ -39,7 +39,10 @@
       "name": "Type of support",
       "preposition": "of type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -64,7 +67,10 @@
       "name": "Business stage",
       "preposition": "for businesses which are",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -145,7 +151,10 @@
       "name": "Industry",
       "preposition": "for businesses in",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -174,7 +183,10 @@
       "name": "Number of employees",
       "preposition": "for businesses with",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -235,7 +247,10 @@
       "name": "Region",
       "preposition": "for businesses in",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     }

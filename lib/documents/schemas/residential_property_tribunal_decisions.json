@@ -64,7 +64,10 @@
       "name": "Category",
       "preposition": "categorised as",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -329,7 +332,10 @@
       "name": "Sub-category",
       "preposition": "sub-categorised as",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -339,6 +345,11 @@
       "key": "tribunal_decision_decision_date",
       "name": "Decision date",
       "short_name": "Decided",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {

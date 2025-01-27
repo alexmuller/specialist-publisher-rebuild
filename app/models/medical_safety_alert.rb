@@ -1,6 +1,6 @@
 class MedicalSafetyAlert < Document
-  validates :alert_type, presence: true
-  validates :issued_date, presence: true, date: true
+  apply_validations
+  validates :issued_date, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     alert_type

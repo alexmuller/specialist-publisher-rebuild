@@ -1,8 +1,6 @@
 class UtaacDecision < Document
-  validates :tribunal_decision_categories, presence: true
-  validates :tribunal_decision_sub_categories, presence: false
-  validates :tribunal_decision_decision_date, presence: true, date: true
-  validates :tribunal_decision_judges, presence: true
+  apply_validations
+  validates :tribunal_decision_decision_date, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     hidden_indexable_content

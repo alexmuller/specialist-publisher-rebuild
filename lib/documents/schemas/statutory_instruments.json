@@ -42,7 +42,10 @@
       "name": "Sifting status",
       "preposition": "with status",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -131,7 +134,10 @@
       "name": "Subject",
       "preposition": "relating to",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     }

@@ -30,7 +30,10 @@
       "name": "Subject",
       "preposition": "with subject",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -75,7 +78,10 @@
       "name": "Region",
       "preposition": "for decisions in",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -104,7 +110,10 @@
       "name": "Case type",
       "preposition": "of type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -189,7 +198,10 @@
       "name": "Regulatory decision",
       "preposition": "with outcome",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -199,6 +211,11 @@
       "key": "first_published_at",
       "name": "Published",
       "short_name": "Published",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

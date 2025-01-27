@@ -189,7 +189,10 @@
       "name": "Payment types",
       "preposition": "payment type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     }

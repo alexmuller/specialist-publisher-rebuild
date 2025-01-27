@@ -1,5 +1,6 @@
 class RaibReport < Document
-  validates :date_of_occurrence, presence: true, date: true
+  apply_validations
+  validates :date_of_occurrence, date: true
 
   FORMAT_SPECIFIC_FIELDS = %i[
     date_of_occurrence

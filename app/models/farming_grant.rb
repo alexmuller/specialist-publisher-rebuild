@@ -1,5 +1,5 @@
 class FarmingGrant < Document
-  validates :payment_types, presence: true
+  apply_validations
 
   FORMAT_SPECIFIC_FIELDS = %i[
     areas_of_interest

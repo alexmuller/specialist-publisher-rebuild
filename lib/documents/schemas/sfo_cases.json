@@ -22,7 +22,10 @@
       "name": "Case state",
       "preposition": "with case state",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -33,6 +36,11 @@
       "name": "Date announced",
       "preposition": "announced",
       "short_name": "Date announced",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     }
   ],

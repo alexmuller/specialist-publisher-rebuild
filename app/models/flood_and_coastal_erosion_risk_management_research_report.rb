@@ -1,10 +1,7 @@
 class FloodAndCoastalErosionRiskManagementResearchReport < Document
-  validates :flood_and_coastal_erosion_category, presence: true
+  apply_validations
   validates :date_of_completion, date: true
   validates :date_of_start, date: true
-  validates :project_code, presence: true
-  validates :project_status, presence: true
-  validates :topics, presence: true
   validates :primary_publishing_organisation, presence: true
 
   FORMAT_SPECIFIC_FIELDS = %i[

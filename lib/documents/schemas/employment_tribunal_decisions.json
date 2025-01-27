@@ -41,7 +41,10 @@
       "name": "Country",
       "preposition": "by country",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -270,7 +273,10 @@
       "name": "Jurisdiction code",
       "preposition": "by jurisdiction",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -280,6 +286,11 @@
       "key": "tribunal_decision_decision_date",
       "name": "Decision date",
       "short_name": "Decided",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {

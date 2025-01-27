@@ -54,7 +54,10 @@
       "preposition": "of disease type",
       "short_name": "type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -76,7 +79,10 @@
       "preposition": "with control zone restriction",
       "short_name": "Control zone restriction",
       "specialist_publisher_properties": {
-        "select": "one"
+        "select": "one",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -146,7 +152,10 @@
       "preposition": "with control zone type",
       "short_name": "Control zone type",
       "specialist_publisher_properties": {
-        "select": "multiple"
+        "select": "multiple",
+        "validations": {
+          "required": {}
+        }
       },
       "type": "text"
     },
@@ -166,6 +175,11 @@
       "name": "Case opened date",
       "preposition": "opened",
       "short_name": "Opened",
+      "specialist_publisher_properties": {
+        "validations": {
+          "required": {}
+        }
+      },
       "type": "date"
     },
     {
