@@ -6,14 +6,7 @@ class AaibReport < Document
                       report.report_type == "safety-study" && report.date_of_occurrence.blank?
                     }
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    date_of_occurrence
-    aircraft_category
-    report_type
-    location
-    aircraft_type
-    registration
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

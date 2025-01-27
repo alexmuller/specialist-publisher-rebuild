@@ -1,11 +1,7 @@
 class LifeSavingMaritimeApplianceServiceStation < Document
   apply_validations
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    life_saving_maritime_appliance_service_station_regions
-    life_saving_maritime_appliance_manufacturer
-    life_saving_maritime_appliance_type
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

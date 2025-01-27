@@ -1,11 +1,7 @@
 class ExportHealthCertificate < Document
   apply_validations
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    certificate_status
-    commodity_type
-    destination_country
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

@@ -2,12 +2,7 @@ class EmploymentTribunalDecision < Document
   apply_validations
   validates :tribunal_decision_decision_date, date: true
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    hidden_indexable_content
-    tribunal_decision_categories
-    tribunal_decision_country
-    tribunal_decision_decision_date
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

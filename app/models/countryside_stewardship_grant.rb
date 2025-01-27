@@ -1,10 +1,5 @@
 class CountrysideStewardshipGrant < Document
-  FORMAT_SPECIFIC_FIELDS = %i[
-    grant_type
-    land_use
-    tiers_or_standalone_items
-    funding_amount
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 

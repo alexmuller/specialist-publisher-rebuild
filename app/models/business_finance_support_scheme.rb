@@ -2,15 +2,7 @@ class BusinessFinanceSupportScheme < Document
   apply_validations
   validates :continuation_link, presence: true
 
-  FORMAT_SPECIFIC_FIELDS = %i[
-    business_sizes
-    business_stages
-    continuation_link
-    industries
-    regions
-    types_of_support
-    will_continue_on
-  ].freeze
+  FORMAT_SPECIFIC_FIELDS = format_specific_fields
 
   attr_accessor(*FORMAT_SPECIFIC_FIELDS)
 
