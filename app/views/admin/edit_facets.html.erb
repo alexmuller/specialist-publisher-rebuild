@@ -22,24 +22,10 @@
 <% content_for :context, "#{current_format.title} finder" %>
 
 
-<div class="govuk-grid-row">
+<div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-two-thirds">
     <%= form_tag do %>
-      <p class="govuk-body govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
-        Filters and its options are to help users find desired content on a specialist finder. These are selected by you for each specialist content item created in the Specialist Publisher. These are shown in the blue box on the documents and elsewhere.
-      </p>
-
-      <%= render "govuk_publishing_components/components/add_another", {
-        fieldset_legend: "Filter",
-        add_button_text: "Add another filter",
-        items: current_format.finder_schema.facets.each_with_index.map do  |facet, index|
-          {
-            fields: render(partial: "facet_fields", locals: { facet:, index: }),
-            destroy_checkbox: render("govuk_publishing_components/components/checkboxes", { name: "facets[#{index}][_destroy]", items: [{label: "Delete", value: "1" }]})
-          }
-        end,
-        empty: render(partial: "facet_fields", locals: { index: current_format.finder_schema.facets.length }),
-      } %>
+      <%= render "facets_form_fields", { schema: current_format.finder_schema } %>
 
       <div class="govuk-button-group govuk-!-margin-top-8">
         <%= render "govuk_publishing_components/components/button", {

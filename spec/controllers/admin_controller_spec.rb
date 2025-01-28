@@ -12,6 +12,22 @@ RSpec.describe AdminController, type: :controller do
     log_in_as user
   end
 
+  describe "GET new finder form" do
+    it "responds successfully" do
+      stub_publishing_api_has_content([], hash_including(document_type: Organisation.document_type))
+      get :new
+      expect(response.status).to eq(200)
+    end
+  end
+
+  describe "POST new finder form" do
+    it "responds successfully" do
+      stub_publishing_api_has_content([], hash_including(document_type: Organisation.document_type))
+      post :new, params: { email_alert_type: "foo" }
+      expect(response.status).to eq(200)
+    end
+  end
+
   describe "GET summary" do
     it "responds successfully" do
       stub_publishing_api_has_content([], hash_including(document_type: Organisation.document_type))

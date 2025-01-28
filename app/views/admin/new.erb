@@ -1,0 +1,60 @@
+<% content_for :breadcrumbs do %>
+  <%= render "govuk_publishing_components/components/breadcrumbs", {
+  collapse_on_mobile: true,
+    breadcrumbs: [
+      {
+        title: "All finders",
+        url: root_path
+      },
+      {
+        title: "Request for a new finder",
+        url: "/admin/new"
+      }
+    ]
+  } %>
+<% end %>
+<% content_for :page_title, "Request for a new finder" %>
+<% content_for :title, "Request for a new finder" %>
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">
+      This form is for internal (developer) use only and is not intended to be used by publishers.
+    </p>
+  </div>
+</div>
+
+<% if defined?(@proposed_schema) && @proposed_schema.to_json != "{}" %>
+  <%= render "govuk_publishing_components/components/details", {
+    title: "View generated schema",
+    open: true,
+  } do %>
+    <pre><code><%= JSON.pretty_generate(@proposed_schema.as_json) %></code></pre>
+  <% end %>
+<% end %>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <%= form_tag do %>
+      <%= render "govuk_publishing_components/components/heading", {
+        text: "Metadata",
+        margin_bottom: 3,
+      } %>
+
+      <%= render "metadata_form_fields", { schema: @proposed_schema } %>
+
+      <%= render "govuk_publishing_components/components/heading", {
+        text: "Facets",
+        margin_bottom: 3,
+      } %>
+
+      <%= render "facets_form_fields", { schema: @proposed_schema } %>
+
+      <div class="govuk-button-group govuk-!-margin-top-8">
+        <%= render "govuk_publishing_components/components/button", {
+          text: "Generate schema",
+        } %>
+      </div>
+    <% end %>
+  </div>
+</div>

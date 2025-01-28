@@ -1,0 +1,121 @@
+<p class="govuk-body">
+  All fields are mandatory unless explicitly marked as optional.
+</p>
+
+<%= render "govuk_publishing_components/components/input", {
+  label: {
+    text: "Title of the finder",
+    heading_size: "s",
+  },
+  name: "name",
+  value: schema.name,
+  hint: "Example: Find animal disease cases and control zones"
+} %>
+
+<%= render "govuk_publishing_components/components/input", {
+  label: {
+    text: "Slug or URL",
+    heading_size: "s",
+  },
+  name: "base_path",
+  value: schema.base_path,
+  hint: "Example: /animal-disease-cases-england"
+} %>
+
+<%= render "components/autocomplete", {
+  id: "organisations",
+  label: {
+    text: "Organisations the finder should be attached to",
+    heading_size: "s",
+  },
+  name: "organisations[]",
+  select: {
+    multiple: true,
+    selected: schema.organisations,
+    options: [""] + organisations_options,
+  },
+} %>
+
+<%= render "govuk_publishing_components/components/textarea", {
+  label: {
+    text: "Short description (For search engines)",
+    heading_size: "s",
+  },
+  hint: "Example: Find notifiable exotic animal disease cases and control zone declarations for England.",
+  name: "description",
+  rows: 5,
+  value: schema.description,
+} %>
+
+<%= render "govuk_publishing_components/components/textarea", {
+  label: {
+    text: "Summary of the finder (Longer description shown below title) (optional)",
+    heading_size: "s",
+  },
+  hint: "Example: Find notifiable exotic animal disease cases and control zone declarations for England. There are cases of bird flu (avian influenza) in England. Check if you are in a disease control zone on the map. Find an export health certificate - GOV.UK",
+  name: "summary",
+  rows: 8,
+  value: schema.summary,
+} %>
+
+<%
+  related_links = safe_join([0,1,2].map { |index| render "govuk_publishing_components/components/input", {
+      label: {
+        text: "Link #{index + 1}",
+        heading_size: "s",
+      },
+      name: "related[]",
+      rows: 8,
+      value: (schema.related||[])[index] ,
+    }
+  })
+%>
+
+<%= hidden_field_tag "include_related", false %>
+<%= render "govuk_publishing_components/components/checkboxes", {
+  name: "include_related",
+  id: "include_related",
+  heading: "Any related links on GOV.UK? (optional)",
+  heading_size: "s",
+  hint_text: "Provide the content ids of any related pages",
+  items: [
+    {
+      label: "Yes",
+      value: true,
+      checked: schema.related,
+      conditional: related_links
+    }
+  ]
+} %>
+
+<%= render "govuk_publishing_components/components/radio", {
+  heading: "Should summary of each content show under the title in the finder list page?",
+  heading_size: "s",
+  hint: "Example: Content summaries on Finance and support for your business vs Countryside Stewardship grants with no summaries",
+  name: "show_summaries",
+  inline: true,
+  items: [
+    {
+      value: "true",
+      text: "Yes",
+      checked: schema.show_summaries
+    },
+    {
+      value: "false",
+      text: "No",
+      checked: !schema.show_summaries
+    }
+  ]
+} %>
+
+<%= render "govuk_publishing_components/components/input", {
+  label: {
+    text: "The document noun (How the documents on the finder are referred to)",
+    heading_size: "s",
+  },
+  name: "document_noun",
+  value: schema.document_noun,
+  hint: "For example ‘scheme’. On Finance and support for your business there’s 151 schemes, which updates when you start selecting filter options"
+} %>
+
+<%= render EmailAlertFieldsetComponent.new(email_alert: EmailAlert.from_finder_schema(schema)) %>

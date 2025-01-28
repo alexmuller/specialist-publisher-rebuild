@@ -1,7 +1,22 @@
 class AdminController < ApplicationController
   layout "design_system"
 
-  before_action :check_authorisation, if: :document_type_slug
+  before_action :check_authorisation
+
+  def new
+    @proposed_schema = FinderSchema.new
+    @proposed_schema.facets = []
+  end
+
+  def create
+    @proposed_schema = FinderSchema.new
+    @proposed_schema.facets = []
+    @proposed_schema.content_id = SecureRandom.uuid
+    overwrite_with_facets_params(@proposed_schema)
+    overwrite_with_metadata_params(@proposed_schema)
+
+    render :new
+  end
 
   def summary; end
 
@@ -10,41 +25,15 @@ class AdminController < ApplicationController
   def edit_metadata; end
 
   def confirm_facets
-    @params = facets_params
-    @params["facets"] = @params["facets"].values.map { |facet_params|
-      next if facet_params["_destroy"] == "1"
-
-      Facet.from_finder_admin_form_params(facet_params)
-           .to_finder_schema_attributes
-    }.compact
-
     @proposed_schema = FinderSchema.new(@current_format.finder_schema.attributes)
-    @proposed_schema.update(@params)
+    overwrite_with_facets_params(@proposed_schema)
 
     render :confirm_facets
   end
 
   def confirm_metadata
-    @params = params.permit(
-      :name,
-      :base_path,
-      :description,
-      :summary,
-      :show_summaries,
-      :document_noun,
-      organisations: [],
-      related: [],
-    )
-
-    email_alert = EmailAlert.from_finder_admin_form_params(email_alert_params)
-    @params.merge!(email_alert.to_finder_schema_attributes)
-
     @proposed_schema = FinderSchema.new(@current_format.finder_schema.attributes)
-    @proposed_schema.update(@params.to_unsafe_h)
-
-    if params[:include_related] != "true"
-      @proposed_schema.related = nil
-    end
+    overwrite_with_metadata_params(@proposed_schema)
 
     render :confirm_metadata
   end
@@ -60,7 +49,9 @@ class AdminController < ApplicationController
 private
 
   def check_authorisation
-    if current_format
+    if !document_type_slug
+      authorize current_user, :can_request_new_finder?, policy_class: FinderAdministrationPolicy
+    elsif current_format
       authorize current_format
     else
       flash[:danger] = "That format doesn't exist. If you feel you've reached this in error, please contact your main GDS contact."
@@ -83,6 +74,19 @@ private
       },
       editorial_remark: params[:editorial_remark],
     }
+  end
+
+  def metadata_params
+    params.permit(
+      :name,
+      :base_path,
+      :description,
+      :summary,
+      :show_summaries,
+      :document_noun,
+      organisations: [],
+      related: [],
+    )
   end
 
   def email_alert_params
@@ -114,5 +118,27 @@ private
     params.permit(
       facets: allowed_facet_params,
     )
+  end
+
+  def overwrite_with_metadata_params(proposed_schema)
+    email_alert = EmailAlert.from_finder_admin_form_params(email_alert_params)
+    params_to_overwrite = metadata_params.merge!(email_alert.to_finder_schema_attributes)
+    proposed_schema.update(params_to_overwrite.to_unsafe_h)
+
+    if params[:include_related] != "true"
+      proposed_schema.related = nil
+    end
+  end
+
+  def overwrite_with_facets_params(proposed_schema)
+    params_to_overwrite = facets_params
+    submitted_facets = params_to_overwrite["facets"]&.values || [] # `nil` if "new finder" form is submitted without any facets
+    params_to_overwrite["facets"] = submitted_facets.map { |facet_params|
+      next if facet_params["_destroy"] == "1"
+
+      Facet.from_finder_admin_form_params(facet_params)
+           .to_finder_schema_attributes
+    }.compact
+    proposed_schema.update(params_to_overwrite)
   end
 end
